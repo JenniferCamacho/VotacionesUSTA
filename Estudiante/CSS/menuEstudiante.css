@@ -1,6 +1,7 @@
 body{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial, Helvetica, sans-serif;
   margin: 0;
+  position: fixed;
 }
 
 .contenedor {
@@ -8,7 +9,7 @@ body{
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template: 130px auto 50px / 0.15fr 1fr;
+    grid-template: 130px auto 50px / 0.2fr 1fr;
     grid-template-areas: 
     "header header"
     "menu2 contenido"
@@ -18,7 +19,7 @@ body{
   .contenedor i{
     color: #ffffff;
     margin-left: 128px;
-    size: 500px;
+    size: 300px;
   }
 
   .header{
@@ -29,14 +30,15 @@ body{
     padding: 10px;
     grid-area: header;
     padding-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 10px;
+    margin-top: 50px;
   }
   .LogoUSTA{
     height: auto;
     width: auto;
     max-width: 116px;
     max-height: 111px;
-    margin-left: 500px;
+    margin-left: 400px;
   }
 
   .header a{
@@ -49,24 +51,24 @@ body{
     letter-spacing: 1px;
     word-spacing: 5px;
   }
-
+/* boton del menu */
   .header button{
     background-color: #183B71;
     border: none;
-    font-size: 50px;
+    font-size: 35px;
     cursor: pointer;
 
     position: absolute;
     width: 0px;
-    height: 140px;
+    height: 190px;
     left: -83px;
     top: 0px;
   }
  
   /* menu del header */
   .menu ul {
-    margin-left: 500px;
     padding: 0;
+    margin-left: 300px;
     list-style: none;
   }
   .menu ul li{
@@ -74,7 +76,7 @@ body{
   }
   .menu ul li a {
     display: block;
-    padding: 20px;
+    padding: 10px;
   }
   .menu ul li a:hover{
     color: #87ace4;
@@ -86,7 +88,7 @@ body{
     grid-area: menu2;
   }
   .menu2 ul {
-    margin-left:5px;
+    left:100px;
     list-style: none;
     padding-bottom: 800px;
     padding-top: 1px;
@@ -114,46 +116,47 @@ body{
 
   .contenido{
     background-color: #ffffff;
+    margin-top: 30px;
     grid-area: contenido;
   }
   #boton1{
     background-color: #ffffff;
     border: none;
-    font-size: 200px;
+    font-size: 100px;
     cursor: pointer;
 
     position: absolute;
     width: 122px;
     height: 149px;
-    left: 300px;
-    top: 340px;
+    left: 250px;
+    top: 300px;
   }
 
   #boton2{
     background-color: #ffffff;
     border: none;
-    font-size: 200px;
+    font-size: 100px;
     cursor: pointer;
 
     position: absolute;
     width: 122px;
     height: 149px;
-    left: 800px;
-    top: 340px;
+    left: 600px;
+    top: 300px;
 
   }
 
   #boton3{
     background-color: #ffffff;
     border: none;
-    font-size: 200px;
+    font-size: 100px;
     cursor: pointer;
 
     position: absolute;
     width: 122px;
     height: 149px;
-    left: 1300px;
-    top: 340px;
+    left: 950px;
+    top: 300px;
   }
 
  .contenido button i{
@@ -162,7 +165,8 @@ body{
  .contenido button h2{
   color: #000000;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 35px;
+  font-size: 25px;
+  
 }
 .contenido i:hover{
   color: #5984c5;

@@ -8,7 +8,7 @@ body{
       width: 100vw;
       height: 100vh;
       display: grid;
-      grid-template: 130px auto 50px / 0.15fr 1fr;
+      grid-template: 130px auto 50px / 0.2fr 1fr;
       grid-template-areas: 
       "header header"
       "menu2 contenido"
@@ -18,7 +18,7 @@ body{
     .contenedor i{
       color: #ffffff;
       margin-left: 128px;
-      size: 500px;
+      size: 300px;
     }
   
     .header{
@@ -37,7 +37,7 @@ body{
       width: auto;
       max-width: 116px;
       max-height: 111px;
-      margin-left: 500px;
+      margin-left: 400px;
     }
   
     .header a{
@@ -54,7 +54,7 @@ body{
     .header button{
       background-color: #183B71;
       border: none;
-      font-size: 50px;
+      font-size: 35px;
       cursor: pointer;
   
       position: absolute;
@@ -66,8 +66,8 @@ body{
    
     /* menu del header */
     .menu ul {
-      margin-left: 500px;
       padding: 0;
+      margin-left: 300px;
       list-style: none;
     }
     .menu ul li{
@@ -75,7 +75,7 @@ body{
     }
     .menu ul li a {
       display: block;
-      padding: 20px;
+      padding: 10px;
     }
     .menu ul li a:hover{
       color: #87ace4;
@@ -87,7 +87,7 @@ body{
       grid-area: menu2;
     }
     .menu2 ul {
-      margin-left:5px;
+      left:100px;
       list-style: none;
       padding-bottom: 800px;
       padding-top: 1px;
@@ -119,7 +119,7 @@ body{
     }
     .contenido table{
         text-align: center;
-        margin-left: 350px;
+        margin-left: 130px;
     }
     .TitulosTabla{
         text-align: center;
@@ -148,17 +148,16 @@ body{
       position: absolute;
       width: 113px;
       height: 102px;
-      left: 711px;
-      top: 678px;
+      left: 411px;
+      top: 550px;
     }
     #boton2{
       position: absolute;
       width: 113px;
       height: 102px;
-      left: 1109px;
-      top: 678px;
+      left: 809px;
+      top: 550px;
     }
-
 
     .contenido button i{
       color: #183B71;
