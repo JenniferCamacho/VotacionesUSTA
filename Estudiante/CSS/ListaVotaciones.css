@@ -5,9 +5,13 @@
         text-align: center;
         font-size: 40px;
     }
+    .contenido p{
+      text-align: center;
+    }
     .contenido table{
         text-align: center;
         margin-left: 130px;
+        margin-top: -10px;
     }
     .TitulosTabla{
         text-align: center;
@@ -31,6 +35,7 @@
       border: none;
       font-size: 70px;
       cursor: pointer;
+      margin-top: 50px;
     }
     #boton1{
       position: absolute;
@@ -56,6 +61,10 @@
     }
     .contenido i:hover{
       color: #5984c5;
+    }
+    .ContenidoTabla:hover{
+      background-color: #adc9f0;
+      cursor: pointer;
     }
      
 
