@@ -6,7 +6,6 @@
     }
     .contenido button{
       background-color: #183B71;
-      color: rgb(255, 255, 255);
       border: 10px;
       padding-top: 5px;
       padding-bottom: 5px;
@@ -17,10 +16,13 @@
     .contenido button:hover{
       background-color: #87ace4;
     }
+    .contenido a{
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
     #botonCancelar{
-      margin-left: 100px;
+      margin-left: 440px;
       margin-top: 100px;
-
     }
     #botonPostularse{ 
       margin-left: 100px;
