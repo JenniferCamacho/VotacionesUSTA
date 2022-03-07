@@ -20,6 +20,7 @@ body{
     color: #ffffff;
     margin-left: 128px;
     size: 300px;
+    margin-bottom: 50px;
   }
 
   .header{
@@ -31,7 +32,8 @@ body{
     grid-area: header;
     padding-bottom: 10px;
     padding-top: 10px;
-    margin-top: 50px;
+    /* variar ancho del header */
+    margin-top: 0;
   }
   .LogoUSTA{
     height: auto;
