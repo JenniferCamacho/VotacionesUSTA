@@ -20,19 +20,12 @@
     color: #3A60C2;
 }
 
-.ContenidoTabla td{
-    padding: 0px;
-}
-
 /* Botones ICONOS */
 .contenido button{
   background-color: #ffffff;
   border: none;
-  font-size: 70px;
+  font-size: 35px;
   cursor: pointer;
-  margin-top: 50px;
-  width: 30px;
-  height: 3gi0px;
 }
 
 .contenido button i{
