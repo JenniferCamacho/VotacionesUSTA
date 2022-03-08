@@ -27,7 +27,7 @@
 
 .TitulosTablas td{
     padding-right: 70px;
-    padding-left: 7git0px;
+    padding-left: 70px;
     padding-bottom: 12px;
     padding-top: 12px;
     font-weight: bold;
@@ -39,4 +39,24 @@
 .ContenidoTablas td{
     padding: 5px;
     text-align: center;
+}
+
+.contenido button{
+    background-color: white;
+    border: none;
+    
+}
+.contenido button i{
+    color: #5ECA38;
+    font-size: 50px;
+    margin-top: 50px;
+}
+.contenido button i:hover{
+    color: #335a24;
+    cursor: pointer;
+}
+.contenido button h3{
+    padding-top: 20px;
+    margin-left: 120px;
+    color: #25660d;
 }
