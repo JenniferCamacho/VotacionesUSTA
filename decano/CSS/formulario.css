@@ -1,16 +1,38 @@
 
 
-.contenido input{
+
+.formulario {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  .formulario input{
+    margin-left: 20px;
+    height: 20px;
+    width: 350px;
+    background: #BEDCF3;
+    color: black;
     background-color: #BEDCF3;
     left: 50%;
-    position: absolute;
-}
+    float: right;
+  }
 
-.formulario{
-    
-}
+  .formulario h3{
+    text-align: left;
+  }
 
-.contenido h1{
-    left: 40px;
-}
+  .formulario button{
+    background: #2C74AC;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    float: right;
+  }
 
+  .formulario select{
+    background: #BEDCF3;
+    font-size: 18px;
+    color: black;
+    width: 360px;
+    float: right;
+  }

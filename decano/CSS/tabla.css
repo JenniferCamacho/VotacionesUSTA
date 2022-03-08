@@ -1,0 +1,62 @@
+td h2 {
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: #3A60C2;
+    font-size: 20px;
+}
+
+table {
+    margin-left: 5%;
+}
+
+td {
+    font-size: 15px;
+    width: 10000px;
+} 
+
+
+img {
+    width: 15%;
+}
+
+.ojo {
+    width: 25%;
+    float: right;
+}
+
+h3 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+    margin-left: 3%;
+}
+
+h4 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    margin-left: 5%;
+    color: #1D70BD;
+}
+
+.postulacion td h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    background-color: #0A5BA5;
+    font-size: 20px;
+    text-align: center;
+}
+
+.postulacion td {
+    font-size: 15px;
+    width: 10000px;
+} 
