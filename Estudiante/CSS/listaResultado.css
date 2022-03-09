@@ -50,6 +50,15 @@
         background-color: #adc9f0;
         cursor: pointer;
     }
+    .contenido td a i{
+        margin: auto;
+        color: #183B71;
+        font-size: 30px;
+    }
+    .contenido td a i:hover{
+        margin: auto;
+        color: #1f2631;
+    }
 
 
 
