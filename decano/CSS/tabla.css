@@ -16,16 +16,6 @@ td {
     width: 10000px;
 } 
 
-
-img {
-    width: 15%;
-}
-
-.ojo {
-    width: 25%;
-    float: right;
-}
-
 h3 {
     font-family: Roboto;
     font-style: normal;
@@ -60,3 +50,16 @@ h4 {
     font-size: 15px;
     width: 10000px;
 } 
+
+.contenido button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+.contenido button i{
+    color: #155282;
+    font-size: 20px;
+    margin: auto;
+  }
