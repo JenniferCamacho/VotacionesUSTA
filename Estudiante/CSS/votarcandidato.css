@@ -38,7 +38,9 @@
         font-size: 100px;
         margin: 0;  
         padding: 0;
-      margin-left: 30px;
+        margin-left: 8px;
+        background-color: #BEC8D7;
+
     }
     .candidato{
         background-color: #BEC8D7;
@@ -53,6 +55,17 @@
         padding-bottom: 50px;
         list-style: none;
         color: black;
+    }
+    .candidato h3{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: #947ec7;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+    }
+    .candidato h3:hover{
+        color: #3c114d;
     }
     
 
