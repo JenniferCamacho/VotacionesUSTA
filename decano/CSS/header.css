@@ -1,7 +1,6 @@
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial, Helvetica, sans-serif;
     margin: 0;
-    position: fixed;
   }
   
   .contenedor {
@@ -110,10 +109,6 @@ body{
     .menu2 ul h2{
       color: #ffffff;
       text-align: center;
-    }
-
-    .contenido {
-  
     }
 
     .titulo{
