@@ -1,0 +1,75 @@
+
+
+
+.formulario {
+    margin-left: 10%;
+    margin-right: 25%;
+  }
+
+  .formulario input{
+    margin-left: 20px;
+    height: 20px;
+    width: 350px;
+    background: #BEDCF3;
+    color: black;
+    background-color: #BEDCF3;
+    left: 50%;
+    float: right;
+  }
+
+  .formulario h3{
+    text-align: left;
+  }
+
+  .formulario button{
+    background: #2C74AC;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    float: right;
+  }
+
+  .formulario select{
+    background: #BEDCF3;
+    font-size: 18px;
+    color: black;
+    width: 360px;
+    float: right;
+  }
+
+  .porcentaje {
+      width: 100%;
+  }
+
+  
+  table {
+    margin-top: 150px;
+}
+
+.postulacion td h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    background-color: #0A5BA5;
+    font-size: 20px;
+    text-align: center;
+}
+
+.postulacion td {
+    font-size: 15px;
+    width: 10000px;
+} 
+
+.contenido button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+
+.contenido button i{
+    color: #155282;
+    font-size: 20px;
+    margin: auto;
+  }

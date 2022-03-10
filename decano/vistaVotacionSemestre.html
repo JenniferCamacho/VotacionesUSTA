@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Votaciones USTA</title>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/vista.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <button><i class="fa-solid fa-bars"></i></button>
+            <img src="../Estudiante/pictures/Logotipo_USTA_Colombia.gif" alt="logo" class="LogoUSTA"></a>
+            <h1>VOTACIONES USTA</h1>
+            <!--nav crea enlaces de navegaciòn -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="login.html">Salir</a></li>
+                </ul>
+            </nav>
+        </div> 
+        <div class="opciones">
+            <nav class="menu2">
+                <ul>
+                    <h2>Nombre de la votación</h2>
+                    <li><a href="agregarEstudiante.html">Agregar Estudiante</a></li>
+                    <li><a href="crearVotacion.html">Crear Votación</a></li>
+                    <li><a href="listaDeEstudiantes.html">Lista de Estudiantes</a></li>
+                    <li><a href="listaDeVotaciones.html">Lista de votaciones</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="contenido">
+            <div class="titulo">
+                <h1>Nombre de la Votación</h1>
+                <h2 style="color: #3A60C2;">Representante por semestre</h2>
+            </div>
+            <div class="panel">
+                <a href="./editarVotacion.html">
+                    <button style="background: transparent; border:none; cursor: pointer; margin-left: 160px;">
+                        <i class="fa-solid fa-pencil" style="color: #3A60C2; font-size: 20px; margin-left: -60px"></i>
+                    </button>
+                </a>
+                <div class="formulario" style="margin-top: -10px;">
+                    <h3>Fecha de Inicio</h3>
+                    <h3>Fecha de Finalización</h3>
+                    <h3>Ciclo</h3>
+                    <h3>Estado</h3>
+                </div>
+                <div class="porcentaje">
+                    <div style="width: 100%;">
+                        <div style="width: 40%;float: left; margin-top: -70px;"> 
+                            <h2 style="margin-left: 5px; margin-top: 70px; color: blue">Porcentaje de la votación</h2>
+                        <i class="fa-solid fa-circle" style="color: blue; margin-left: 150px; font-size: 200px;"></i>
+                        </div>
+                        <div style="margin-left: 30%;"> 
+                            <br>
+                            <h4>Estudiantes habilitados para votar: x</h4>
+                            <br>
+                            <h4>Estudiantes que han realizado la votación: x</h4>
+                        </div>
+                    </div>
+                </div>
+                <table class="postulacion">
+                    <tr>
+                        <td><h2>Semestre</h2></td>
+                        <td><h2>Nombre</h2></td>
+                        <td><h2>Apellidos</h2></td>
+                        <td><h2>Cantidad de Votos</h2></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Sebastian</td>
+                        <td>Meza Calle</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</body>
+</html>
