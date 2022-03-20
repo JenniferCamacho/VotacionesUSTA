@@ -21,6 +21,11 @@
     text-align: left;
   }
 
+  .formulario h3 label{
+    color: rgb(166, 166, 184);
+    padding-left: 98px;
+  }
+
   .formulario button{
     background: #2C74AC;
     font-size: 18px;
