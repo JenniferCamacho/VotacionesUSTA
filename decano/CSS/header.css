@@ -5,7 +5,7 @@ body{
   
   .contenedor {
       background-color: #ffffff;
-      width: 100vw;
+      width: 105vw;
       height: 100vh;
       display: grid;
       grid-template: 130px auto 50px / 0.2fr 1fr;
