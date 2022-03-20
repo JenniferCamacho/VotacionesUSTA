@@ -11,6 +11,10 @@
     font-size: 20px;
     display: inline-block;
 }
+.contenido h2 label{
+    color: gray;
+    padding-left: 10px;
+}
 .contenido h4{
     margin-left: 100px;
     font-size: 25px;

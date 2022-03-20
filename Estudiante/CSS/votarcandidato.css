@@ -18,7 +18,7 @@
         display: inline-block;
 
     }
-    #pre{
+    .contenido h3 label{
         font-size: 20px;
         color: rgb(90, 103, 112);
         display: inline-block;

@@ -13,6 +13,11 @@
         font-size: 20px;
         color: #183B71;
     }
+
+    .contenido h3 label{
+        color: gray;
+        padding-left: 10px;
+    }
     .contenido h3{
         font-size: 20px;
         display: inline-block;

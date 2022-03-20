@@ -37,13 +37,18 @@
     .votacion{
       margin-right: 290px;
     }
-    #votacionT{
-      margin-right: 18px;
+    .votacion h3 label{
+      color: gray;
+      margin-left: 10px;
     }
+    .votacion h3{
+      margin-right: 100px;
+    }
+    
    
     #propuestaTXT{
       margin-left: 75px;
-      margin-top: -18px;
+      margin-top: -60px;
       background-color: rgba(24, 59, 113, 0.28);
       border: #ffffff;
     }
