@@ -1,0 +1,35 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block css%} 
+    <link rel="stylesheet" href="{% static 'app/css/formulario.css' %}" />
+{% endblock%} 
+
+{% block contenido%} 
+<div class="contenido">
+    <div class="titulo">
+        <h1>Cambiar Estado</h1>
+    </div>
+    <div class="panel">
+        <div class="formulario">
+            <h3>Nombre <Label>Votación #1</Label></h3>
+            <h3>Fecha de inicio <label> 10/02/2022</label></h3>
+            <h3>Fecha de finalización <label>10/03/2022</label></h3>
+            <h3>Ciclo <label>2022-1</label></h3>
+            <h3>Facultad <label>Ingeniería de Telecomunicaciones</label></h3>
+            <h3>Tipo de Votación <label>Representante por semestre</label></h3>                    
+            <h3>
+                <input type="radio" name="x">Postulación</label>
+                <br>
+                <input type="radio" name="x">Votación</label>
+                <br>
+                <input type="radio" name="x">Cerrado</label>
+                <br>
+            </h3>
+            <a href="{% url 'app:listaDeVotaciones'%}">
+                <button>Guardar</button>
+            </a>
+        </div>
+    </div>
+</div>  
+{% endblock%} 

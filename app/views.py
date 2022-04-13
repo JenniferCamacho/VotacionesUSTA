@@ -7,11 +7,17 @@ def index(request):
 def inicio(request):
     return render (request, 'app/inicio.html')
 
+def inicioError(request):
+    return render (request, 'app/inicioError.html')
+
 def menuDecano(request):
     return render (request, 'app/menuDecano.html')
 
 def agregarEstudiante(request):
     return render (request, 'app/agregarEstudiante.html')
+
+def agregarEstudianteError(request):
+    return render (request, 'app/agregarEstudianteError.html')
 
 def crearVotacion(request):
     return render (request, 'app/crearVotacion.html')
@@ -21,3 +27,15 @@ def listaDeEstudiantes(request):
 
 def listaDeVotaciones(request):
     return render (request, 'app/listaDeVotaciones.html')
+
+def editarVotacion(request):
+    return render (request, 'app/editarVotacion.html')
+
+def vistaVotacionFacultad(request):
+    return render (request, 'app/vistaVotacionFacultad.html')
+
+def vistaVotacionSemestre(request):
+    return render (request, 'app/vistaVotacionSemestre.html')
+
+def postulacionEstudiante2(request):
+    return render (request, 'app/postulacionEstudiante2.html')

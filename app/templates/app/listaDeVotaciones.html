@@ -1,12 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <H1>LISTA DE VOTACIONES</H1>
-</body>
-</html>
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'app/css/tabla.css' %}" />
+{% endblock%} 
+
+{% block contenido%} 
+<div class="contenido">
+    <h1>Lista de Votaciones</h1>
+    <div class="panel">
+        <table>
+            <tr  class="titulosTablas">
+                <td>Nombre</td>
+                <td>Tipo</td>
+                <td>Fecha de inicio</td>
+                <td>Fecha de finalización</td>
+                <td>Ciclo</td>
+                <td>Estado</td>
+                <td>Detalles</td>
+                <td>Editar</td>
+            </tr>
+            <tr class="contenidoTablas2">
+                <td>Votacion1</td>
+                <td>Semestre</td>
+                <td>12/12/2022</td>
+                <td>05/05/2023</td>
+                <td>2022-1</td>
+                <td>Postulación</td>
+                <td>
+                    <a href="{%url 'app:vistaVotacionSemestre'%}">
+                        <button class="ojo">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{%url 'app:editarVotacion'%}">
+                        <button>
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            <tr class="contenidoTablas2">
+                <td>Votacion2</td>
+                <td>Facultad</td>
+                <td>12/12/2022</td>
+                <td>05/05/2023</td>
+                <td>2022-1</td>
+                <td>Votación</td>
+                <td>
+                    <a href="{%url 'app:vistaVotacionFacultad'%}">
+                        <button class="ojo">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'app:editarVotacion' %}">
+                        <button>
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock%} 

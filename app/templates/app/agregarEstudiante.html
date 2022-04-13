@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Este es agregar estudiante</h1>
-</body>
-</html>
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'app/css/formulario.css' %}" />
+{% endblock%} 
+
+{% block contenido%} 
+
+        <div class="contenido">
+            <div class="titulo">
+                <h1>Crear Estudiante</h1>
+            </div>
+            <div class="panel">
+                <div class="formulario">
+                    <h3>Nombres<input type="text"></h3>
+                    <h3>Apellidos<input type="text"></h3>
+                    <h3>Semestre<input type="text"></h3>
+                    <h3>Email<input type="text"></h3>
+                    <h3>Documento<input type="text"></h3>
+                    <h3>Facultad <Label>Ingeniería de Telecomunicaciones</Label></h3> 
+                    <a href="{% url 'app:listaDeEstudiantes' %}">
+                        <button>Crear</button>
+                    </a>
+                </div>
+            </div>
+            <a href="{% url 'app:agregarEstudianteError' %}">Mensaje de error</a>
+        </div>
+{% endblock %}

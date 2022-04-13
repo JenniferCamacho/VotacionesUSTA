@@ -1,12 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <H1>LISTA DE ESTUDIANTES</H1>
-</body>
-</html>
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'app/css/tabla.css' %}" />
+{% endblock%} 
+
+{% block contenido%} 
+<div class="contenido">
+    <h1>Lista de Estudiantes</h1>
+    <div class="panel">
+        <table>
+            <tr class="titulosTablas">
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>Email</td>
+                <td>Documento</td>
+                <!-- <td></td> -->
+            </tr>
+            <tr class="contenidoTablas">
+                <td>Sebastian</td>
+                <td>Meza Calle</td>
+                <td>sebastianmeza@usantotomas.edu.co</td>
+                <td>1006015038</td>
+                <!-- <td>
+                    <a href="./editarEstudiante.html">
+                        <i class="fa-solid fa-pencil" style="color: #3A60C2; font-size: 20px; margin-left: -60px"></i>
+                    </a>
+                </td> -->
+            </tr>
+            <tr class="contenidoTablas">
+                <td>Jennifer Andrea</td>
+                <td>Camacho Manosalva</td>
+                <td>jennifercamacho@usantotomas.edu.co</td>
+                <td>8456013698</td>
+                <!-- <td>
+                    <a href="./editarEstudiante.html">
+                        <i class="fa-solid fa-pencil" style="color: #3A60C2; font-size: 20px; margin-left: -60px"></i>
+                    </a>
+                </td> -->
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock%} 
