@@ -25,6 +25,11 @@
             <!--nav crea enlaces de navegaciòn -->
             <nav class="menu">
                 <ul>
+                    {%if request.user.is_authenticated %}
+                    <li>{{request.user.first_name}} -</li>
+                    {%else%}
+                    <li>Anonimo</li>
+                    {%endif%}
                     <li><a href="{% url 'app:menuDecano' %}">Inicio</a></li>
                     <li><a href="{% url 'app:inicio' %}">Salir</a></li>
                 </ul>

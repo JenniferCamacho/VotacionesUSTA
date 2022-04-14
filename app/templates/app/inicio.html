@@ -14,31 +14,33 @@
         <img src="../../static/app/img/wallpaper.jpeg"width="100%"height="100%" alt="USTA">
         <div class="formulario">
             <div class="logo"><img src="../../static/app/img/usta_logo.png"width="100%"height="100%" alt="USTA"></div>
-            <div class="info">
-                <div class="correo">
-                    <h4>Email</h4>
-                    <br><br><br>
-                    <input type="text">
-                </div>
-                <div class="documento">
-                    <h4>Documento</h4>
-                    <br><br><br>
-                    <input type="text">
-                </div>
-                <div class="ingresar">
-                    <!-- acceso al menu principal -->
-                    <a href="{% url 'app:menuDecano' %}">
-                        <button><h3>Ingresar</h3></button>
-                    </a>
-                    <a href="../Estudiante/menuEstudiante.html">
-                        Estudiante
-                    </a>
+            
+                <form action="{% url 'app:menuDecano' %}" method="post">
+                    {% csrf_token %} 
+                    <div class="info">
+                        <div class="correo">
+                            <h4>Email</h4>
+                            <br><br><br>
+                            <input type="text" name="username">
+                        </div>
+                        <div class="documento">
+                            <h4>Documento</h4>
+                            <br><br><br>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="ingresar">
+                            <!-- acceso al menu principal -->
+                            <a href="{% url 'app:menuDecano' %}">
+                                <button type="submit"><h3>Ingresar</h3></button>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+                
                     <br>
                     <a href="{%url 'app:inicioError'%}">
                         error
-                    </a>
-                </div>
-            </div>
+                    </a>        
         </div>
     </div>
 </body>

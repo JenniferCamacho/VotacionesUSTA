@@ -1,5 +1,8 @@
+import email
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth import authenticate, login
+
 
 def index(request):
     return HttpResponse("Hola")
@@ -11,7 +14,20 @@ def inicioError(request):
     return render (request, 'app/inicioError.html')
 
 def menuDecano(request):
-    return render (request, 'app/menuDecano.html')
+    # recuperar datos
+    u= request.POST['username']
+    p= request.POST['password']
+    #autentificacion de datos
+    usuario= authenticate(username=u, password=p)
+    
+    if usuario is None:
+        return render (request, 'app/inicioError.html')
+    else:
+        # inicia sesion
+        login(request, usuario)
+        print(usuario)
+ 
+        return render (request, 'app/menuDecano.html')
 
 def agregarEstudiante(request):
     return render (request, 'app/agregarEstudiante.html')
