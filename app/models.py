@@ -52,7 +52,7 @@ class Estudiante (models.Model):
     semestreActual= models.IntegerField(null=False)
 
     def __str__(self):
-        return self.user
+        return "%s %s" % (self.user, self.facultad)
 
     class Meta:
         app_label= 'app'
@@ -63,7 +63,7 @@ class EstadoVotacion (models.Model):
     codigo= models.CharField(max_length=45, null=False)
 
     def __str__(self):
-        return self.nombre
+        return "%s" % (self.nombre)
 
     class Meta:
         app_label= 'app'
@@ -74,7 +74,7 @@ class TipoVotacion (models.Model):
     codigo= models.CharField(max_length=45, null=False)
 
     def __str__(self):
-        return self.nombre
+        return "%s" % (self.nombre)
 
     class Meta:
         app_label= 'app'
@@ -97,6 +97,9 @@ class Votacion (models.Model):
         null=False,
         on_delete=models.PROTECT
     )
+
+    fechaInicio=models.DateField(auto_now=False, auto_now_add=False, null=True)
+    fechaFinal=models.DateField(auto_now=False, auto_now_add=False,null=True)
 
     def __str__(self):
         return self.nombre

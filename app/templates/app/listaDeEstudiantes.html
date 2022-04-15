@@ -8,6 +8,7 @@
 {% block contenido%} 
 <div class="contenido">
     <h1>Lista de Estudiantes</h1>
+
     <div class="panel">
         <table>
             <tr class="titulosTablas">
@@ -17,28 +18,21 @@
                 <td>Documento</td>
                 <!-- <td></td> -->
             </tr>
+            {%for e  in Estudiantes%}
             <tr class="contenidoTablas">
-                <td>Sebastian</td>
-                <td>Meza Calle</td>
-                <td>sebastianmeza@usantotomas.edu.co</td>
-                <td>1006015038</td>
+                <td>{{e.user.first_name}}</td>
+                <td>{{e.user.last_name}}</td>
+                <td>{{e.user.email}}</td>
+                <!-- cambiar por Documento -->
+                <td>{{e.user.username}}</td>
+            </tr>
+            {%endfor%}
                 <!-- <td>
                     <a href="./editarEstudiante.html">
                         <i class="fa-solid fa-pencil" style="color: #3A60C2; font-size: 20px; margin-left: -60px"></i>
                     </a>
                 </td> -->
-            </tr>
-            <tr class="contenidoTablas">
-                <td>Jennifer Andrea</td>
-                <td>Camacho Manosalva</td>
-                <td>jennifercamacho@usantotomas.edu.co</td>
-                <td>8456013698</td>
-                <!-- <td>
-                    <a href="./editarEstudiante.html">
-                        <i class="fa-solid fa-pencil" style="color: #3A60C2; font-size: 20px; margin-left: -60px"></i>
-                    </a>
-                </td> -->
-            </tr>
+            
         </table>
     </div>
 </div>

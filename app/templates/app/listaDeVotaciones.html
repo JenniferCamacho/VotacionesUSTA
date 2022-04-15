@@ -20,13 +20,14 @@
                 <td>Detalles</td>
                 <td>Editar</td>
             </tr>
+            {%for v  in votaciones %}
             <tr class="contenidoTablas2">
-                <td>Votacion1</td>
-                <td>Semestre</td>
-                <td>12/12/2022</td>
-                <td>05/05/2023</td>
-                <td>2022-1</td>
-                <td>Postulación</td>
+                <td>{{v.nombre}}</td>
+                <td>{{v.tipo_id}}</td>
+                <td>{{v.fechaInicio}}</td>
+                <td>{{v.fechaFinal}}</td>
+                <td> CICLO </td>
+                <td>{{v.estado_id}}</td>
                 <td>
                     <a href="{%url 'app:vistaVotacionSemestre'%}">
                         <button class="ojo">
@@ -42,28 +43,8 @@
                     </a>
                 </td>
             </tr>
-            <tr class="contenidoTablas2">
-                <td>Votacion2</td>
-                <td>Facultad</td>
-                <td>12/12/2022</td>
-                <td>05/05/2023</td>
-                <td>2022-1</td>
-                <td>Votación</td>
-                <td>
-                    <a href="{%url 'app:vistaVotacionFacultad'%}">
-                        <button class="ojo">
-                            <i class="fa-solid fa-eye"></i>
-                        </button>
-                    </a>
-                </td>
-                <td>
-                    <a href="{% url 'app:editarVotacion' %}">
-                        <button>
-                            <i class="fa-solid fa-pencil"></i>
-                        </button>
-                    </a>
-                </td>
-            </tr>
+            {%endfor%}
+
         </table>
     </div>
 </div>
