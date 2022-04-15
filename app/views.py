@@ -1,9 +1,10 @@
+from multiprocessing import context
+import string
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from app.models import Decano
-from app.models import Estudiante
+from app.models import Decano, Facultad, Estudiante
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -40,13 +41,22 @@ def menuDecano(request):
 
 @login_required
 def agregarEstudiante(request):
-    return render (request, 'app/agregarEstudiante.html')
-    # registro de estudiante
+
+    # retorna la facultad del decano
+        id_usuario=request.user.id
+        facultad=Decano.objects.get(user_id=id_usuario)
+        contexto={
+            'Facultad':facultad
+        }
+        return render (request, 'app/agregarEstudiante.html',contexto)
+
+# registro de estudiante
 def registro(request):
     return render (request, 'app/listaDeEstudiantes.html')
+
 def registroPost(request):
     #VALIDACION DE LOS DATOS
-
+   
     # saca datos
     nombre=request.POST['nombres']
     apellidos=request.POST['apellidos']
@@ -54,7 +64,10 @@ def registroPost(request):
     semestre=request.POST['semestre']
     email=request.POST['email']
     documento=request.POST['documento']
-
+    
+    # se obtiene el id de la facultad del estudiante
+    id_usuario=request.user.id
+    facultad=Decano.objects.get(user_id=id_usuario)
     #crea usuario
     usuario=User()
     usuario.first_name=nombre
@@ -62,12 +75,13 @@ def registroPost(request):
     usuario.username=username
     usuario.email=email
     usuario.set_password(documento)
+    usuario.save()
+
     estudiante=Estudiante()
     estudiante.semestreActual=semestre
-    # estudiante.user_id=usuario.id
-    # falta la facultad y guardar semestre
-    usuario.save()
-    # estudiante.save()
+    estudiante.user_id=usuario.id
+    estudiante.facultad_id=facultad.id
+    estudiante.save()
 
     return redirect('app:listaDeEstudiantes')
 

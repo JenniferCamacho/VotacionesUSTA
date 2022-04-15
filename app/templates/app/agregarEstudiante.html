@@ -22,8 +22,7 @@
                         <h3>Email<input type="email" name="email"></h3>
                         <h3>Documento<input type="number" name="documento"></h3>
                         {%if request.user.is_authenticated %}
-                        <h3> Facultad <label>{{request.user.id}}</label></h3>
-                        <h3>P {{request.decano.user_id}}</h3>
+                        <h3> Facultad <label>{{ Facultad }}</label></h3>
                         {%else%}
                         <h3>Facultad <label>Anonimo</label></h3>
                         {%endif%}

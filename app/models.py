@@ -5,7 +5,7 @@ class Facultad(models.Model):
     nombre= models.CharField(max_length=45, null=False)
 
     def __str__(self):
-        return self.nombre
+        return "%s" % (self.nombre)
 
     class Meta:
         app_label= 'app'
@@ -30,7 +30,7 @@ class Decano (models.Model):
     )
 
     def __str__(self):
-        return self.user
+        return "%s" % (self.facultad)
 
     class Meta:
         app_label= 'app'
