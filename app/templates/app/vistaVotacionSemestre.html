@@ -9,19 +9,19 @@
 <div class="contenido">
     <div class="titulo">
         <h1>Nombre de la Votación</h1>
-        <h2 style="color: #3A60C2;">Representante por semestre</h2>
+        <h2 style="color: #3A60C2;">Representante por {{t}}</h2>
     </div>
     <div class="panel">
-        <a href="{% url 'app:editarVotacion'%}">
+        <a href="{% url 'app:editarVotaciones'%}">
             <button style="background: transparent; border:none; cursor: pointer; margin-left: 160px;">
                 <i class="fa-solid fa-pencil" style="color: #3A60C2; font-size: 20px; margin-left: -60px"></i>
             </button>
         </a>
         <div class="formulario" style="margin-top: -10px;">
-            <h3>Fecha de Inicio <label>10/02/2022</label></h3>
-            <h3>Fecha de Finalización <label>10/03/2022</label></h3>
-            <h3>Ciclo <label>2022-1</label></h3>
-            <h3>Estado <label>Postulación</label></h3>
+            <h3>Fecha de Inicio <label>{{v.fechaInicio}}</label></h3>
+            <h3>Fecha de Finalización <label>{{v.fechaFinal}}</label></h3>
+            <h3>Ciclo <label>CICLO</label></h3>
+            <h3>Estado <label>Null</label></h3>
         </div>
         <div class="porcentaje">
             <div style="width: 100%;">

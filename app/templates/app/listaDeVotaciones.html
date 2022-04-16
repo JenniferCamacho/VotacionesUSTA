@@ -29,18 +29,31 @@
                 <td> CICLO </td>
                 <td>{{v.estado_id}}</td>
                 <td>
-                    <a href="{%url 'app:vistaVotacionSemestre'%}">
+                    {%if v.tipo_id is 1 %}
+                    <!-- <h1>HOLA MUNDO</h1> -->
+                    <form action="{%url 'app:vistaVotacionSemestrePost' v.id %}">
+                        {% csrf_token %}
                         <button class="ojo">
                             <i class="fa-solid fa-eye"></i>
                         </button>
-                    </a>
+                    </form>
+                    {%else%}
+                    <!-- <h1>CHAO MUNDO</h1> -->
+                    <form action="{%url 'app:vistaVotacionFacultadPost' v.id %}">
+                        {% csrf_token %}
+                        <button class="ojo">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </form>
+                    {%endif%}                    
                 </td>
                 <td>
-                    <a href="{%url 'app:editarVotacion'%}">
-                        <button>
+                    <form action="{%url 'app:editarVotacionesPost' v.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">
                             <i class="fa-solid fa-pencil"></i>
                         </button>
-                    </a>
+                    </form> 
                 </td>
             </tr>
             {%endfor%}

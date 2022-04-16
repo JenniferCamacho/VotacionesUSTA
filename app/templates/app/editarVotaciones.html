@@ -11,13 +11,15 @@
         <h1>Cambiar Estado</h1>
     </div>
     <div class="panel">
+        
         <div class="formulario">
-            <h3>Nombre <Label>Votación #1</Label></h3>
-            <h3>Fecha de inicio <label> 10/02/2022</label></h3>
-            <h3>Fecha de finalización <label>10/03/2022</label></h3>
-            <h3>Ciclo <label>2022-1</label></h3>
-            <h3>Facultad <label>Ingeniería de Telecomunicaciones</label></h3>
-            <h3>Tipo de Votación <label>Representante por semestre</label></h3>                    
+            
+            <h3>Nombre <Label>{{v.nombre}}</Label></h3>
+            <h3>Fecha de inicio <label>{{v.fechaInicio}}</label></h3>
+            <h3>Fecha de finalización <label>{{v.fechaFinal}}</label></h3>
+            <h3>Ciclo <label>CICLO</label></h3>
+            <h3>Facultad <label>{{f}}</label></h3>
+            <h3>Tipo de Votación <label>{{v.tipo_id}}</label></h3>                    
             <h3>
                 <input type="radio" name="x">Postulación</label>
                 <br>
@@ -29,7 +31,10 @@
             <a href="{% url 'app:listaDeVotaciones'%}">
                 <button>Guardar</button>
             </a>
+            
         </div>
+        
+        
     </div>
 </div>  
 {% endblock%} 

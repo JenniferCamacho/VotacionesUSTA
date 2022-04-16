@@ -17,9 +17,12 @@ urlpatterns = [
     path('votacionPost/', views.votacionPost, name='votacionPost'),
     path('listaDeEstudiantes/', views.listaDeEstudiantes, name='listaDeEstudiantes'),
     path('listaDeVotaciones/', views.listaDeVotaciones, name='listaDeVotaciones'),
-    path('editarVotacion/', views.editarVotacion, name='editarVotacion'),
+    path('editarVotaciones/', views.editarVotaciones, name='editarVotaciones'),
+    path('editarVotacionesPost/<int:id_votacion>/', views.editarVotacionesPost, name='editarVotacionesPost'),
     path('vistaVotacionFacultad/', views.vistaVotacionFacultad, name='vistaVotacionFacultad'),
+    path('vistaVotacionFacultadPost/<int:id_votacion>/', views.vistaVotacionFacultadPost, name='vistaVotacionFacultadPost'),
     path('vistaVotacionSemestre/', views.vistaVotacionSemestre, name='vistaVotacionSemestre'),
+    path('vistaVotacionSemestrePost/<int:id_votacion>/', views.vistaVotacionSemestrePost, name='vistaVotacionSemestrePost'),
     path('postulacionEstudiante2/', views.postulacionEstudiante2, name='postulacionEstudiante2'),
 
 ]

@@ -119,7 +119,7 @@ def crearVotacion(request):
 
 def votacionPost(request):
     
-    # try:
+    try:
     # saca datos
         Nombre=request.POST['nombre']
         FechaInicio=request.POST['fechaInicio']
@@ -133,8 +133,8 @@ def votacionPost(request):
 
         # crea votacion
         votacion=Votacion()
-        estado=EstadoVotacion.objects.get(id=1)
-        tipo=TipoVotacion.objects.get(id=1)
+        estado=EstadoVotacion.objects.get(id=2)
+        tipo=TipoVotacion.objects.get(id=2)
 
         votacion.nombre=Nombre
         votacion.estado_id=estado.id
@@ -147,9 +147,9 @@ def votacionPost(request):
         votacion.save()
 
         return redirect('app:listaDeVotaciones')
-    # except:
-    #     veri=True
-    #     return redirect('app:listaDeVotaciones')
+    except:
+        veri=True
+        return redirect('app:listaDeVotaciones')
 
 @login_required
 def listaDeEstudiantes(request):  
@@ -186,18 +186,54 @@ def listaDeVotaciones(request):
         veri= True
         return render(request, 'app/listaDeVotaciones.html')
     
+@login_required
+def editarVotaciones(request,):
+    return render (request, 'app/editarVotaciones.html')
 
 @login_required
-def editarVotacion(request):
-    return render (request, 'app/editarVotacion.html')
+def editarVotacionesPost(request, id_votacion):
+    votacion=Votacion.objects.get(id=id_votacion)
+    # Revisar si existe otra forma de llamarlo
+    facultad=Facultad.objects.get(id=votacion.facultad_id)
+    contexto={
+        'v':votacion,
+        'f':facultad     
+    }
+    return render (request, 'app/editarVotaciones.html',contexto)
 
 @login_required
 def vistaVotacionFacultad(request):
     return render (request, 'app/vistaVotacionFacultad.html')
 
 @login_required
+def vistaVotacionFacultadPost(request, id_votacion):
+    votacion=Votacion.objects.get(id=id_votacion)
+    # Revisar si existe otra forma de llamarlo
+    facultad=Facultad.objects.get(id=votacion.facultad_id)
+    tipo=TipoVotacion.objects.get(id=votacion.tipo_id)
+    contexto={
+        'v':votacion,
+        'f':facultad,
+        't':tipo   
+    }
+    return render (request, 'app/vistaVotacionFacultad.html',contexto)
+
+@login_required
 def vistaVotacionSemestre(request):
     return render (request, 'app/vistaVotacionSemestre.html')
+
+@login_required
+def vistaVotacionSemestrePost(request, id_votacion):
+    votacion=Votacion.objects.get(id=id_votacion)
+    # Revisar si existe otra forma de llamarlo
+    facultad=Facultad.objects.get(id=votacion.facultad_id)
+    tipo=TipoVotacion.objects.get(id=votacion.tipo_id)
+    contexto={
+        'v':votacion,
+        'f':facultad,
+        't':tipo   
+    }
+    return render (request, 'app/vistaVotacionSemestre.html',contexto)
 
 @login_required
 def postulacionEstudiante2(request):
