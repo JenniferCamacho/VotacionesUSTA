@@ -22,12 +22,15 @@
                 {%else%}
                 <h3>Facultad <label>Anonimo</label></h3>
                 {%endif%}
+
                 <h3>Tipo de Votación 
-                    <select size="1" multiple >
-                        <option Value="1" name="tipo" >{{ s }}</option>
-                        <option Value="2" >{{ f }}</option>
+                    <select name="tipo" id="tipo">
+                        {% for t in tipo%}
+                        <option value="{{t.id}}">{{t.nombre}}</option>>
+                        {%endfor%}  
                     </select>
                 </h3>
+
                 <h3>Ciclo
                     <select size="1" multiple >
                         <option value="1">2022-1</option>

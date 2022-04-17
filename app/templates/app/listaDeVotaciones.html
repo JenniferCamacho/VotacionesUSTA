@@ -48,7 +48,7 @@
                     {%endif%}                    
                 </td>
                 <td>
-                    <form action="{%url 'app:editarVotacionesPost' v.id %}" method="POST">
+                    <form action="{%url 'app:editarVotaciones' v.id %}" method="POST">
                         {% csrf_token %}
                         <button type="submit">
                             <i class="fa-solid fa-pencil"></i>

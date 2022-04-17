@@ -13,25 +13,25 @@
     <div class="panel">
         
         <div class="formulario">
-            
-            <h3>Nombre <Label>{{v.nombre}}</Label></h3>
-            <h3>Fecha de inicio <label>{{v.fechaInicio}}</label></h3>
-            <h3>Fecha de finalización <label>{{v.fechaFinal}}</label></h3>
-            <h3>Ciclo <label>CICLO</label></h3>
-            <h3>Facultad <label>{{f}}</label></h3>
-            <h3>Tipo de Votación <label>{{v.tipo_id}}</label></h3>                    
-            <h3>
-                <input type="radio" name="x">Postulación</label>
-                <br>
-                <input type="radio" name="x">Votación</label>
-                <br>
-                <input type="radio" name="x">Cerrado</label>
-                <br>
-            </h3>
-            <a href="{% url 'app:listaDeVotaciones'%}">
+            <form action="{% url 'app:editarVotacionesPost' id %}" method="POST">
+                {% csrf_token %} 
+                <h3>Nombre <Label>{{v.nombre}}</Label></h3>
+                <h3>Fecha de inicio <label>{{v.fechaInicio}}</label></h3>
+                <h3>Fecha de finalización <label>{{v.fechaFinal}}</label></h3>
+                <h3>Ciclo <label>CICLO</label></h3>
+                <h3>Facultad <label>{{f}}</label></h3>
+                      
+                <h3>Tipo de Votación 
+                    <select name="estado" id="estado">
+                        {% for e in estado %}
+                        <option value="{{e.id}}">{{e.nombre}}</option>
+                        {%endfor%}  
+                    </select>
+              
+                </h3>                    
                 <button>Guardar</button>
-            </a>
-            
+               
+            </form>
         </div>
         
         

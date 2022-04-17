@@ -8,20 +8,22 @@
 {% block contenido%} 
 <div class="contenido">
     <div class="titulo">
-        <h1>Nombre de la Votación</h1>
+        <h1>{{v.nombre}}</h1>
         <h2 style="color: red;">Representante por {{t}}</h2>
     </div>
     <div class="panel">
-        <a href="{%url 'app:editarVotaciones'%}">
+        <form action="{%url 'app:editarVotaciones' v.id %}">
+            {% csrf_token %}
             <button style="background: transparent; border:none; cursor: pointer; margin-left: 160px;">
-                <i class="fa-solid fa-pencil" style="color: red; font-size: 20px; margin-left: -60px"></i>
+                <i class="fa-solid fa-pencil" style="color: #3A60C2; font-size: 20px; margin-left: -60px"></i>
             </button>
-        </a>
+        </form>
+        
         <div class="formulario" style="margin-top: -10px;">
             <h3>Fecha de Inicio <label>{{v.fechaInicio}}</label></h3>
             <h3>Fecha de Finalización<label>{{v.fechaFinal}}</label></h3>
             <h3>Ciclo <label>CICLO</label></h3>
-            <h3>Estado <label> NULL</label></h3>
+            <h3>Estado <label>{{e}}</label></h3>
         </div>
         <div class="porcentaje">
             <div style="width: 100%;">

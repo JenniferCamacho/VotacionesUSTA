@@ -1,3 +1,4 @@
+from msilib.schema import RadioButton
 from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -5,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from app.models import Decano, Facultad, Estudiante, EstadoVotacion, TipoVotacion, Votacion,Candidato, Voto
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 def index(request):
     return HttpResponse("Hola")
@@ -100,17 +102,14 @@ def crearVotacion(request):
         # retorna la facultad del decano
         id_usuario=request.user.id
         Facultad=Decano.objects.get(user_id=id_usuario)
-
-        # retorna tipos de votacion
-        semestre=TipoVotacion.objects.get(id=1)
-        facultad=TipoVotacion.objects.get(id=2)
-        estado=EstadoVotacion.objects.get(id=1)
+        Tipo=TipoVotacion.objects.all()
+        # siempre debe estar en estado postulacion
+        Estado=EstadoVotacion.objects.get(id=1)
         # estado de la votacion
         contexto={
             'Facultad':Facultad,
-            's':semestre,
-            'f':facultad,
-            'estado':estado
+            'tipo':Tipo,
+            'estado':Estado  
         }
         return render (request,'app/crearVotacion.html',contexto)
     except:
@@ -119,12 +118,12 @@ def crearVotacion(request):
 
 def votacionPost(request):
     
-    try:
+    # try:
     # saca datos
         Nombre=request.POST['nombre']
         FechaInicio=request.POST['fechaInicio']
         FechaFin=request.POST['fechaFin']
-        # Tipo=request.POST['tipo']
+        Tipo=request.POST['tipo']
         # el estado es postulacion
        
         #id de la facultad del decano (facultad.id)
@@ -133,23 +132,20 @@ def votacionPost(request):
 
         # crea votacion
         votacion=Votacion()
-        estado=EstadoVotacion.objects.get(id=2)
-        tipo=TipoVotacion.objects.get(id=2)
-
+        # siempre queda en estado Postulacion
+        estado=EstadoVotacion.objects.get(id=1)
         votacion.nombre=Nombre
         votacion.estado_id=estado.id
         votacion.facultad_id=facultad.id
         votacion.fechaInicio=FechaInicio
         votacion.fechaFinal=FechaFin
-
-        # tipo votacion
-        votacion.tipo_id= tipo.id
+        votacion.tipo_id= Tipo
         votacion.save()
 
         return redirect('app:listaDeVotaciones')
-    except:
-        veri=True
-        return redirect('app:listaDeVotaciones')
+    # except:
+    #     veri=True
+    #     return redirect('app:listaDeVotaciones')
 
 @login_required
 def listaDeEstudiantes(request):  
@@ -176,10 +172,9 @@ def listaDeVotaciones(request):
         id_usuario=request.user.id
         facultad_decano=Decano.objects.get(user_id=id_usuario)
         
-        lista=Votacion.objects.filter(facultad_id=facultad_decano.id)
-        
+        v=Votacion.objects.filter(facultad_id=facultad_decano.id)
         contexto={
-            'votaciones':lista
+            'votaciones':v,
         }
         return render (request, 'app/listaDeVotaciones.html',contexto)
     except:
@@ -187,19 +182,34 @@ def listaDeVotaciones(request):
         return render(request, 'app/listaDeVotaciones.html')
     
 @login_required
-def editarVotaciones(request,):
-    return render (request, 'app/editarVotaciones.html')
+def editarVotaciones(request, id_votacion):
+    votacion=Votacion.objects.get(id=id_votacion)
+    facultad=Facultad.objects.get(id=votacion.facultad_id)
+
+    if votacion.estado_id == 1:
+        estado=EstadoVotacion.objects.filter(Q(id=1) | Q(id=2))
+    elif votacion.estado_id == 2:
+        estado=EstadoVotacion.objects.filter(Q(id=2) | Q(id=3))
+    else:
+        estado=EstadoVotacion.objects.filter(Q(id=3) | Q(id=4))
+
+    contexto={
+        'id':votacion.id,
+        'estado':estado,
+        'f':facultad,
+        'v':votacion
+    }
+    return render (request, 'app/editarVotaciones.html',contexto)
 
 @login_required
 def editarVotacionesPost(request, id_votacion):
     votacion=Votacion.objects.get(id=id_votacion)
-    # Revisar si existe otra forma de llamarlo
-    facultad=Facultad.objects.get(id=votacion.facultad_id)
-    contexto={
-        'v':votacion,
-        'f':facultad     
-    }
-    return render (request, 'app/editarVotaciones.html',contexto)
+    Estado=request.POST['estado']
+    votacion.estado_id=Estado
+    votacion.save()
+
+    return redirect('app:listaDeVotaciones')
+
 
 @login_required
 def vistaVotacionFacultad(request):
@@ -211,10 +221,12 @@ def vistaVotacionFacultadPost(request, id_votacion):
     # Revisar si existe otra forma de llamarlo
     facultad=Facultad.objects.get(id=votacion.facultad_id)
     tipo=TipoVotacion.objects.get(id=votacion.tipo_id)
+    estado=EstadoVotacion.objects.get(id=votacion.estado_id)
     contexto={
         'v':votacion,
         'f':facultad,
-        't':tipo   
+        't':tipo,
+        'e':estado
     }
     return render (request, 'app/vistaVotacionFacultad.html',contexto)
 
@@ -228,10 +240,13 @@ def vistaVotacionSemestrePost(request, id_votacion):
     # Revisar si existe otra forma de llamarlo
     facultad=Facultad.objects.get(id=votacion.facultad_id)
     tipo=TipoVotacion.objects.get(id=votacion.tipo_id)
+    estado=EstadoVotacion.objects.get(id=votacion.estado_id)
+
     contexto={
         'v':votacion,
         'f':facultad,
-        't':tipo   
+        't':tipo,
+        'e':estado 
     }
     return render (request, 'app/vistaVotacionSemestre.html',contexto)
 
