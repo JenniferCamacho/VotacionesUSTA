@@ -54,10 +54,6 @@ def agregarEstudiante(request):
         veri=True
         return render (request, 'app/agregarEstudiante.html')
         
-# # registro de estudiante
-# def registro(request):
-#     return render (request, 'app/listaDeEstudiantes.html')
-
 def registroPost(request):
     #VALIDACION DE LOS DATOS
     try:
@@ -82,9 +78,11 @@ def registroPost(request):
         usuario.save()
 
         estudiante=Estudiante()
+
         estudiante.semestreActual=semestre
         estudiante.user_id=usuario.id
         estudiante.facultad_id=facultad.id
+        estudiante.documento=documento
         estudiante.save()
 
         return redirect('app:listaDeEstudiantes')

@@ -10,7 +10,6 @@ urlpatterns = [
     path('inicioError/', views.inicioError, name='inicioError'),
     path('menuDecano/', views.menuDecano, name='menuDecano'),
     path('agregarEstudiante/', views.agregarEstudiante, name='agregarEstudiante'),
-    # path('registro/',views.registro,name='registro'),
     path('registroPost/',views.registroPost,name='registroPost'),
     path('agregarEstudianteError/', views.agregarEstudianteError, name='agregarEstudianteError'),
     path('crearVotacion/', views.crearVotacion, name='crearVotacion'),

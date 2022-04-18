@@ -36,6 +36,9 @@ class Decano (models.Model):
         app_label= 'app'
 
 class Estudiante (models.Model):
+    semestreActual= models.IntegerField(null=False)
+    documento=models.IntegerField(null=False)
+
     facultad= models.ForeignKey(
         Facultad,
         related_name='estudiantes',
@@ -49,7 +52,7 @@ class Estudiante (models.Model):
         primary_key=False,
         on_delete=models.PROTECT
     )
-    semestreActual= models.IntegerField(null=False)
+    
 
     def __str__(self):
         return "%s %s" % (self.user, self.facultad)
