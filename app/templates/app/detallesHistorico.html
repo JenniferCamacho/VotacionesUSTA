@@ -1,0 +1,58 @@
+{% extends "app/headerEstudiante.html" %}
+{% load static %}
+
+{% block css%}   
+<link rel="stylesheet" href="{% static 'app/css/detallesHistorico.css' %}" />
+{% endblock%} 
+
+{% block contenido%} 
+       
+            <div class="contenido"> 
+                <h1>Nombre de Votación</h1> 
+                <h2>Tipo</h2>
+                <h3>Fecha de inicio <label>10/02/2022</label></h3>
+                <br>
+                <h3>Fecha de finalización <label>10/03/2022</label></h3>
+                <br>
+                <h3>Ciclo <label>2022-1</label></h3>
+
+                <h4>Lista de candidatos</h4>
+
+                <div class="candidato">
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                    <ul>
+                        <li>Nombres y Apellidos</li>
+                        <li>Propuesta</li>
+                    </ul>
+    
+                </div>
+                <br>
+
+                <div class="candidatoG">
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                    <ul>
+                        <li>Nombres y Apellidos</li>
+                        <li>Propuesta</li>
+                    </ul>
+    
+                </div>
+                <br>
+                <div class="candidato">
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                    <ul>
+                        <li>Nombres y Apellidos</li>
+                        <li>Propuesta</li>
+                    </ul>
+    
+                </div>
+            </div> 
+        
+        </div>
+    
+{% endblock%} 
