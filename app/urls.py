@@ -23,5 +23,18 @@ urlpatterns = [
     path('vistaVotacionSemestre/', views.vistaVotacionSemestre, name='vistaVotacionSemestre'),
     path('vistaVotacionSemestrePost/<int:id_votacion>/', views.vistaVotacionSemestrePost, name='vistaVotacionSemestrePost'),
     path('postulacionEstudiante2/', views.postulacionEstudiante2, name='postulacionEstudiante2'),
+    # estudiante
+    path('detallesHistorico/',views.detallesHistorico, name='detallesHistorico'),
+    path('detallesResultado/',views.detallesResultado, name='detallesResultado'),
+    path('detallesResultadosFacultad/',views.detallesResultadosFacultad, name='detallesResultadosFacultad'),
+    path('historicoVotaciones/',views.historicoVotaciones, name='historicoVotaciones'),
+    path('listaResultados/',views.listaResultados, name='listaResultados'),
+    path('listaVotacionesEstudiantes/',views.listaVotacionesEstudiantes, name='listaVotacionesEstudiantes'),
+    path('listaVotaciones/',views.listaVotaciones, name='listaVotaciones'),
+    path('menuEstudiante/',views.menuEstudiante, name='menuEstudiante'),
+    path('postulacionExitosa/',views.postulacionExitosa, name='postulacionExitosa'),
+    path('Postulacion/',views.Postulacion, name='Postulacion'),
+    path('votacionExitosa/',views.historicoVotaciones, name='historicoVotaciones'),
+    path('votarCandidato/',views.votarCandidato, name='votarCandidato'),
 
 ]

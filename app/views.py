@@ -251,3 +251,40 @@ def vistaVotacionSemestrePost(request, id_votacion):
 @login_required
 def postulacionEstudiante2(request):
     return render (request, 'app/postulacionEstudiante2.html')
+
+# PARTE DE ESTUDIANTES
+def detallesHistorico(request):
+    return render (request, 'app/detallesHistorico.html')
+
+def detallesResultado(request):
+    return render (request, 'app/detallesResultado.html')
+ 
+def detallesResultadosFacultad (request):
+    return render (request, 'app/detallesResultadosFacultad.html')
+ 
+def historicoVotaciones(request):
+    return render (request, 'app/historicoVotaciones.html')
+ 
+def listaResultados(request):
+    return render (request, 'app/listaResultados.html')
+ 
+def listaVotacionesEstudiantes(request):
+    return render (request, 'app/listaVotacionesEstudiantes.html')
+ 
+def listaVotaciones (request):
+    return render (request, 'app/listaVotaciones.html')
+ 
+def menuEstudiante(request):
+    return render (request, 'app/menuEstudiante.html')
+ 
+def postulacionExitosa(request):
+    return render (request, 'app/postulacionExitosa.html')
+ 
+def Postulacion(request):
+    return render (request, 'app/Postulacion.html')
+ 
+def votacionExitosa(request):
+    return render (request, 'app/votacionExitosa.html')
+ 
+def votarCandidato(request):
+    return render (request, 'app/votarCandidato.html')
