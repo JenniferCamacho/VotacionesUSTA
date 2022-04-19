@@ -285,4 +285,6 @@ def votacionExitosa(request):
  
 def votarCandidato(request):
     return render (request, 'app/votarCandidato.html')
+
+
     

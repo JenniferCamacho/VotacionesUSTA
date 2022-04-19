@@ -30,7 +30,6 @@ urlpatterns = [
     path('historicoVotaciones/',views.historicoVotaciones, name='historicoVotaciones'),
     path('listaResultados/',views.listaResultados, name='listaResultados'),
     path('listaVotacionesEstudiantes/',views.listaVotacionesEstudiantes, name='listaVotacionesEstudiantes'),
-    path('listaVotaciones/',views.listaVotaciones, name='listaVotaciones'),
     path('menuEstudiante/',views.menuEstudiante, name='menuEstudiante'),
     path('postulacionExitosa/',views.postulacionExitosa, name='postulacionExitosa'),
     path('Postulacion/',views.Postulacion, name='Postulacion'),
