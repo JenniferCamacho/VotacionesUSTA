@@ -270,10 +270,14 @@ def listaResultados(request):
  
 def listaVotacionesEstudiantes(request):
     return render (request, 'app/listaVotacionesEstudiantes.html')
+<<<<<<< HEAD
  
 def listaVotaciones (request):
     return render (request, 'app/listaVotaciones.html')
  
+=======
+# ACA
+>>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e
 def menuEstudiante(request):
     return render (request, 'app/menuEstudiante.html')
  
@@ -287,4 +291,11 @@ def votacionExitosa(request):
     return render (request, 'app/votacionExitosa.html')
  
 def votarCandidato(request):
+<<<<<<< HEAD
     return render (request, 'app/votarCandidato.html')
+=======
+    return render (request, 'app/votarCandidato.html')
+
+
+    
+>>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e

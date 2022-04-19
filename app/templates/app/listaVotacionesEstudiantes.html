@@ -1,43 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Votaciones USTA</title>
-    <link rel="stylesheet" href="./CSS/ListaVotaciones.css">
-    <link rel="stylesheet" href="CSS/header.css">
+{% extends "app/headerEstudiante.html" %}
+{% load static %}
 
-    <!-- ICONOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% block css%}   
+<link rel="stylesheet" href="{% static 'app/css/listaVotaciones.css' %}" />
+{% endblock%} 
 
-</head>
-<body> 
-    <!-- header, contenedor -->
-    <div class="contenedor">
-        <div class="header">
-            <button><i class="fa-solid fa-bars"></i></button>
-            <img src="pictures/Logotipo_USTA_Colombia.gif" alt="logo" class="LogoUSTA"></a>
-            <h1>VOTACIONES USTA</h1>
-            <!--nav crea enlaces de navegaciòn -->
-            <nav class="menu">
-                <ul>
-                    <li><a href="menuEstudiante.html">Inicio</a></li>
-                    <li><a href="../decano/login.html">Salir</a></li>
-                </ul>
-            </nav>
-        </div> 
-        <div class="opciones">
-            <nav class="menu2">
-                <ul>
-                    <h2>MENU</h2>
-                    <li><a href="ListaVotaciones.html">Lista de Votaciones</a></li>
-                    <li><a href="listaResultados.html">Lista de Resultados</a></li>
-                    <li><a href="HistoricoVotaciones.html">Historico de votaciones</a></li>
-                </ul>
-            </nav>
-        </div>
+{% block contenido%} 
         <div class="contenido">
              <h1>Lista de Votaciones</h1>
              <p>En este listado encontrará todas las votaciones en las cuales podrá postularse o elegir su candidato favorito</p>
@@ -127,5 +95,9 @@
         </div> 
     </div>
     
+<<<<<<< HEAD
 </body>
 </html>
+=======
+{% endblock%} 
+>>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e
