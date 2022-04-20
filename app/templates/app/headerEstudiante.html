@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Votaciones USTA</title>
     <link rel="stylesheet" href="{% static 'app/css/headerEstudiante.css' %}" />
-    {% block css%} 
-    {% endblock%} 
+    {% block css%}
+    {% endblock%}
 
     <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
-<body> 
+<body>
     <div class="contenedor">
         <div class="header">
             <button><i class="fa-solid fa-bars"></i></button>
@@ -28,19 +28,20 @@
                     <li><a href="{% url 'app:salir' %}">Salir</a></li>
                 </ul>
             </nav>
-        </div> 
+        </div>
         <div class="opciones">
             <nav class="menu2">
                 <ul>
                     <h2>MENU</h2>
                     <li><a href="{% url 'app:listaVotacionesEstudiantes'%}">Lista de Votaciones</a></li>
+                    <li><a href="{% url 'app:postularme'%}">Postularme</a></li>
                     <li><a href="{% url 'app:listaResultados'%}">Lista de Resultados</a></li>
                     <li><a href="{% url 'app:historicoVotaciones'%}">Historico de votaciones</a></li>
                 </ul>
             </nav>
         </div>
-        {% block contenido%} 
+        {% block contenido%}
         {% endblock %}
-        
+
 </body>
 </html>

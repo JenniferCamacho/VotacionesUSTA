@@ -17,7 +17,7 @@
                         <td>Fecha de inicio</td>
                         <td>Fecha de finalización</td>
                         <td>Ciclo</td>
-                        <td>Votar</td>
+                        <td>Postularse</td>
                     </tr>
                     {%for v  in votaciones %}
                     <tr class="ContenidoTabla">
@@ -25,14 +25,12 @@
                         <td>{{v.facultad.id}}</td>
                         <td>{{v.fechaInicio}}</td>
                         <td>{{v.fechaFinal}}</td>
-                        <td>2022-1</td>                         
+                        <td>CICLO</td>              
+                      
                         <td>
-                            <form action="{%url 'app:votarCandidato' %}">
-                                {% csrf_token %}
-                                <button type="submit">
-                                    <i class="fa-solid fa-user-plus"></i>
-                                </button>
-                            </form>
+                            <a href="{% url 'app:postulacion'%}">
+                            <i class="fa-solid fa-user-plus"></i>
+                            </a>
                         </td>
                      
                     </tr>

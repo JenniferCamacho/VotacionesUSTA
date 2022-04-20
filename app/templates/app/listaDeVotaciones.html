@@ -23,10 +23,23 @@
             {%for v  in votaciones %}
             <tr class="contenidoTablas2">
                 <td>{{v.nombre}}</td>
-                <td>{{v.tipo_id}}</td>
+                {%if v.tipo_id is 1%}
+                <td>Semestre</td>
+                {%else%}
+                <td>Facultad</td>
+                {%endif%}
                 <td>{{v.fechaInicio}}</td>
                 <td>{{v.fechaFinal}}</td>
-                <td> CICLO </td>
+                <td> 2022-1 </td>
+                <td>
+                {%if v.estado_id is 1%}
+                Postulacion
+                {%elif v.estado_id is 2%}
+                Votacion
+                {%else%}
+                Cerrada
+                {%endif%}
+                </td>
                 <td>{{v.estado_id}}</td>
                 <td>
                     {%if v.tipo_id is 1 %}
@@ -57,7 +70,6 @@
                 </td>
             </tr>
             {%endfor%}
-
         </table>
     </div>
 </div>

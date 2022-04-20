@@ -213,7 +213,6 @@ def editarVotacionesPost(request, id_votacion):
 
     return redirect('app:listaDeVotaciones')
 
-
 @login_required
 def vistaVotacionFacultad(request):
     return render (request, 'app/vistaVotacionFacultad.html')
@@ -276,14 +275,33 @@ def listaResultados(request):
 def listaVotacionesEstudiantes(request):
     # id del la facultad del estudiante
         id_usuario=request.user.id
-        facultad_estudiante=Estudiante.objects.get(user_id=id_usuario)
+        facultad_estudiante=Estudiante.objects.get(user_id=id_usuario) 
         
         v=Votacion.objects.filter(Q(facultad_id=facultad_estudiante.facultad_id) & Q(estado_id=2))
         contexto={
-            'votaciones':v
+            'votaciones':v,
+        }
+        return render (request, 'app/listaVotacionesEstudiantes.html',contexto)
+
+def votarCandidato(request):
+    return render (request, 'app/votarCandidato.html')
+
+  
+
+
+def postularme(request):
+    # id del la facultad del estudiante
+        id_usuario=request.user.id
+        facultad_estudiante=Estudiante.objects.get(user_id=id_usuario)
+        
+        v=Votacion.objects.filter(Q(facultad_id=facultad_estudiante.facultad_id) & Q(estado_id=1))
+  
+        contexto={
+            'votaciones':v,
+
         }
         
-        return render (request, 'app/listaVotacionesEstudiantes.html',contexto)
+        return render (request, 'app/postularme.html',contexto)
 
 def menuEstudiante(request):
     return render (request, 'app/menuEstudiante.html')
@@ -297,8 +315,7 @@ def postulacion(request):
 def votacionExitosa(request):
     return render (request, 'app/votacionExitosa.html')
  
-def votarCandidato(request):
-    return render (request, 'app/votarCandidato.html')
+
 
 
     
