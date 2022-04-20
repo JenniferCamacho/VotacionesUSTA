@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-  /* CONTENIDO */
-  .contenido{
-=======
- /* CONTENIDO */
+/* CONTENIDO */
 .contenido{
->>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e
     padding-top: 50px;
     margin-left: 30px;
 }
@@ -29,26 +24,18 @@
 }
 .contenido h4{
     font-size: 30px;
-<<<<<<< HEAD
-
-=======
->>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e
 }
 
 .candidato button{
-   background-color: #BEC8D7;
-   border: none;
+    background-color: #BEC8D7;
+    border: none;
 }
 .candidato button i{
     color: black;
     font-size: 100px;
     margin: 0;  
     padding: 0;
-<<<<<<< HEAD
-  margin-left: 30px;
-=======
     margin-left: 30px;
->>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e
 }
 .candidato{
     background-color: #BEC8D7;
@@ -63,57 +50,31 @@
     list-style: none;
     color: black;
 }
-<<<<<<< HEAD
-/* Candidato GANADOR */
-=======
 
 /* Candidato GANADOR */
 
->>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e
 .candidatoG button{
     background-color: #88ED98;
     border: none;
- }
- .candidatoG button i{
-<<<<<<< HEAD
-     color: black;
-     font-size: 100px;
-     margin: 0;  
-     padding: 0;
-   margin-left: 30px;
- }
- .candidatoG{
-     background-color: #88ED98;
-     grid-area: candidato;
-     display: flex;
- }
- 
- .candidatoG ul li{
-     font-size: 15px;
-     padding-top:10px;
-     padding-bottom: 50px;
-     list-style: none;
-     color: black;
- }
-=======
+}
+.candidatoG button i{
     color: black;
     font-size: 100px;
     margin: 0;  
     padding: 0;
     margin-left: 30px;
- }
- .candidatoG{
+}
+.candidatoG{
     background-color: #88ED98;
     grid-area: candidato;
     display: flex;
- }
- 
- .candidatoG ul li{
+}
+
+.candidatoG ul li{
     font-size: 15px;
     padding-top:10px;
     padding-bottom: 50px;
     list-style: none;
     color: black;
- } 
+} 
  
->>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e

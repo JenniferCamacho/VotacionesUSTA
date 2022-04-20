@@ -21,83 +21,26 @@
                         <td>Postularse</td>
                     </tr>
                     <tr class="ContenidoTabla">
-                       <td>Nombre 1</td>
-                       <td>Facultad</td>
-                       <td>10/10/10</td>
-                       <td>10/10/10</td>
-                       <td>2022-1</td>
-                       <td>
-                           <a href="votarcandidato.html">
-                            <i class="fa-solid fa-check-to-slot"></i> 
-                           </a>
-                       </td>
-                       <td>
-                           <a href="Postulacion.html">
-                            <i class="fa-solid fa-user-plus"></i>
-                           </a>
-                       </td>
-                   </tr>
-
-                   <tr class="ContenidoTabla">
-                       <td>Nombre 2</td>
-                       <td>Semestre</td>
-                       <td>10/10/10</td>
-                       <td>10/10/10</td>
-                       <td>2022-1</td>
-                       <td>
-                        <a href="votarcandidato.html">
-                         <i class="fa-solid fa-check-to-slot"></i> 
-                        </a>
-                    </td>
-                    <td>
-                        <a href="Postulacion.html">
-                         <i class="fa-solid fa-user-plus"></i>
-                        </a>
-                    </td>
-                   </tr>
-                   <tr class="ContenidoTabla">
-                       <td>Nombre 3</td>
-                       <td>Semestre</td>
-                       <td>10/10/10</td>
-                       <td>10/10/10</td>
-                       <td>2022-1</td>
-                       <td>
-                        <a href="votarcandidato.html">
-                         <i class="fa-solid fa-check-to-slot"></i> 
-                        </a>
-                    </td>
-                    <td>
-                        <a href="Postulacion.html">
-                         <i class="fa-solid fa-user-plus"></i>
-                        </a>
-                    </td>
-                   </tr>
-                   <tr class="ContenidoTabla">
-                    <td>Nombre 4</td>
-                    <td>Facultad</td>
-                    <td>10/10/10</td>
-                    <td>10/10/10</td>
-                    <td>2022-1</td>
-                    <td>
-                        <a href="votarcandidato.html">
-                         <i class="fa-solid fa-check-to-slot"></i> 
-                        </a>
-                    </td>
-                    <td>
-                        <a href="Postulacion.html">
-                         <i class="fa-solid fa-user-plus"></i>
-                        </a>
-                    </td>
-                </tr>
+                        <td>Nombre 1</td>
+                        <td>Facultad</td>
+                        <td>10/10/10</td>
+                        <td>10/10/10</td>
+                        <td>2022-1</td>
+                        <td>
+                            <a href="{% url 'app:votarCandidato' %}">
+                                <i class="fa-solid fa-check-to-slot"></i> 
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'app:postulacion'%}">
+                             <i class="fa-solid fa-user-plus"></i>
+                            </a>
+                        </td>
+                    </tr>
                 </table>         
                 
              </div>
         </div> 
     </div>
     
-<<<<<<< HEAD
-</body>
-</html>
-=======
 {% endblock%} 
->>>>>>> 72e5d9ba7b58eed8c3986de3fae0416c2a62612e
