@@ -20,12 +20,13 @@
                         <td>Votar</td>
                         <td>Postularse</td>
                     </tr>
+                    {%for v  in votaciones %}
                     <tr class="ContenidoTabla">
-                        <td>Nombre 1</td>
-                        <td>Facultad</td>
-                        <td>10/10/10</td>
-                        <td>10/10/10</td>
-                        <td>2022-1</td>
+                        <td>{{v.nombre}}</td>
+                        <td>{{v.facultad.id}}</td>
+                        <td>{{v.fechaInicio}}</td>
+                        <td>{{v.fechaFinal}}</td>
+                        <td>CICLO</td>
                         <td>
                             <a href="{% url 'app:votarCandidato' %}">
                                 <i class="fa-solid fa-check-to-slot"></i> 
@@ -37,6 +38,7 @@
                             </a>
                         </td>
                     </tr>
+                    {%endfor%}
                 </table>         
                 
              </div>

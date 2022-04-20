@@ -26,7 +26,12 @@ def inicioPost(request):
     else:
         # inicia sesion
         login(request, usuario)
-        return redirect('app:menuDecano')
+        t=request.user.is_superuser
+        print(t)
+        if t == True:
+            return redirect('app:menuDecano')
+        else:
+            return redirect('app:menuEstudiante')
 
 def inicioError(request):
     return render (request, 'app/inicioError.html')
@@ -269,7 +274,16 @@ def listaResultados(request):
     return render (request, 'app/listaResultados.html')
  
 def listaVotacionesEstudiantes(request):
-    return render (request, 'app/listaVotacionesEstudiantes.html')
+    # id del la facultad del estudiante
+        id_usuario=request.user.id
+        facultad_estudiante=Estudiante.objects.get(user_id=id_usuario)
+        
+        v=Votacion.objects.filter(Q(facultad_id=facultad_estudiante.facultad_id) & Q(estado_id=2))
+        contexto={
+            'votaciones':v
+        }
+        
+        return render (request, 'app/listaVotacionesEstudiantes.html',contexto)
 
 def menuEstudiante(request):
     return render (request, 'app/menuEstudiante.html')
