@@ -7,8 +7,8 @@
 
 {% block contenido%} 
         <div class="contenido">
-             <h1>Lista de Votaciones</h1>
-             <p>En este listado encontrará todas las votaciones en las cuales podrá postularse o elegir su candidato favorito</p>
+             <h1>Lista de votaciones para postularse</h1>
+             <p>En este listado encontrará todas las votaciones en las cuales podrá postularse</p>
              <div class="tabla">
                 <table>
                     <tr class="TitulosTabla">
@@ -22,15 +22,22 @@
                     {%for v  in votaciones %}
                     <tr class="ContenidoTabla">
                         <td>{{v.nombre}}</td>
-                        <td>{{v.facultad.id}}</td>
+                        {%if v.tipo_id is 1%}
+                        <td>Semestre</td>
+                        {%else%}
+                        <td>Facultad</td>
+                        {%endif%}
                         <td>{{v.fechaInicio}}</td>
                         <td>{{v.fechaFinal}}</td>
-                        <td>CICLO</td>              
+                        <td>2022-1</td>              
                       
                         <td>
-                            <a href="{% url 'app:postulacion'%}">
-                            <i class="fa-solid fa-user-plus"></i>
-                            </a>
+                            <form action="{% url 'app:postulacion' v.id %}">
+                                {% csrf_token %}
+                                <button class="ojo">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                </button>
+                            </form>
                         </td>
                      
                     </tr>

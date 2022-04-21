@@ -241,14 +241,10 @@ def vistaVotacionSemestrePost(request, id_votacion):
     votacion=Votacion.objects.get(id=id_votacion)
     # Revisar si existe otra forma de llamarlo
     facultad=Facultad.objects.get(id=votacion.facultad_id)
-    tipo=TipoVotacion.objects.get(id=votacion.tipo_id)
-    estado=EstadoVotacion.objects.get(id=votacion.estado_id)
 
     contexto={
-        'v':votacion,
+        'votaciones':votacion,
         'f':facultad,
-        't':tipo,
-        'e':estado 
     }
     return render (request, 'app/vistaVotacionSemestre.html',contexto)
 
@@ -286,31 +282,58 @@ def listaVotacionesEstudiantes(request):
 def votarCandidato(request):
     return render (request, 'app/votarCandidato.html')
 
-  
+def votarCandidatoPost(request, id_votacion):
+    votacion=Votacion.objects.get(id=id_votacion)
+    facultad=Facultad.objects.get(id=votacion.facultad_id)
+    contexto={
+        'v':votacion,
+        'f':facultad,
+    }
+    return render (request, 'app/votarCandidato.html', contexto)
 
 
 def postularme(request):
     # id del la facultad del estudiante
         id_usuario=request.user.id
         facultad_estudiante=Estudiante.objects.get(user_id=id_usuario)
-        
-        v=Votacion.objects.filter(Q(facultad_id=facultad_estudiante.facultad_id) & Q(estado_id=1))
-  
+        votacion=Votacion.objects.filter(Q(facultad_id=facultad_estudiante.facultad_id) & Q(estado_id=1))
         contexto={
-            'votaciones':v,
-
+            'votaciones':votacion,
         }
         
         return render (request, 'app/postularme.html',contexto)
+
+def postulacion(request,id_votacion):
+    votacion=Votacion.objects.get(id=id_votacion)
+    facultad=Facultad.objects.get(id=votacion.facultad_id)
+    contexto={
+        'v':votacion.id,
+        'f':facultad,
+    }
+    return render (request, 'app/postulacion.html',contexto)
+
+@login_required
+def postulacionPost(request,id_votacion):
+    
+    id_usuario=request.user.id
+    estudiante=Estudiante.objects.get(user_id=id_usuario)
+    p=request.POST['propuesta']
+
+    candidato=Candidato()
+    candidato.propuesta=p
+    candidato.semestre=estudiante.semestreActual
+    candidato.Votacion_id=id_votacion
+    candidato.estudiante_id=estudiante.id
+    print(id_usuario)
+
+    candidato.save()  
+    return redirect ('app:postulacionExitosa')
 
 def menuEstudiante(request):
     return render (request, 'app/menuEstudiante.html')
  
 def postulacionExitosa(request):
     return render (request, 'app/postulacionExitosa.html')
- 
-def postulacion(request):
-    return render (request, 'app/postulacion.html')
  
 def votacionExitosa(request):
     return render (request, 'app/votacionExitosa.html')

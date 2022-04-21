@@ -8,25 +8,24 @@
 {% block contenido%} 
         
         <div class="contenido">
-            <form >
+            <form action="{%url 'app:postulacionPost' v %}" method="POST">
                 <div class="formulario">
+                    {% csrf_token %}
                     <h2>Postulación</h2>
                     <div class="votacion">
-                        <h3>Votación <label>Votación1</label></h3>
+                        <h3>Votación <label>{{v.nombre}}</label></h3>
                     </div>
                     <br>
-                    <h3 id="propuesta">Propuesta</h3>
+                    <h3>Propuesta</h3>
                     <br>
-                    <textarea name="propuesta" id="propuestaTXT" cols="60" rows="20"></textarea>
+                    <h3><input type="text" name="propuesta"></h3>
                     <br>
                 </div> 
+                <Button type="submit" id="botonPostularse">POSTULARSE</Button>  
+            </form> 
                 <Button id="botonCancelar">
-                    <a href="{% url 'app:listaVotacionesEstudiantes'%}">CANCELAR</a>
+                    <a href="{% url 'app:postularme'%}">CANCELAR</a>
                 </Button>   
-                <Button id="botonPostularse">
-                    <a href="{% url 'app:postulacionExitosa'%}">POSTULARSE</a>
-                </Button>                  
-            </form>    
         </div> 
     </div>
     

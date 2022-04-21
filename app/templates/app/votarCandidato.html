@@ -8,13 +8,17 @@
 {% block contenido%} 
         
         <div class="contenido"> 
-            <h1>Nombre de Votación</h1> 
-            <h2>Tipo</h2>
-            <h3>Fecha de inicio <label>10/02/2022</label></h3>
+            <h1>{{v.nombre}}</h1> 
+            {%if v.tipo_id is 1%}
+            <h2>Semestre</h2>
+            {%else%}
+            <h2>Facultad</h2>
+            {%endif%}
+            <h3>Fecha de inicio <label>{{v.fechaInicio}}</label></h3>
             <br>
-            <h3>Fecha de finalización <label>10/03/2022</label></h3>
+            <h3>Fecha de finalización <label>{{v.fechaFinal}}</label></h3>
             <br>
-            <h3>Semestre <label>Ingeniería de Telecomunicaciones</label></h3>
+            <h3>Semestre <label>{{f}}</label></h3>
 
             <h4>Lista de candidatos</h4>
 

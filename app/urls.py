@@ -33,8 +33,11 @@ urlpatterns = [
     path('postularme/',views.postularme, name='postularme'),
     path('menuEstudiante/',views.menuEstudiante, name='menuEstudiante'),
     path('postulacionExitosa/',views.postulacionExitosa, name='postulacionExitosa'),
-    path('postulacion/',views.postulacion, name='postulacion'),
+    path('postulacion/<int:id_votacion>/',views.postulacion, name='postulacion'),
+    path('postulacionPost/<int:id_votacion>/',views.postulacionPost, name='postulacionPost'),
     path('votacionExitosa/',views.votacionExitosa, name='votacionExitosa'),
     path('votarCandidato/',views.votarCandidato, name='votarCandidato'),
+    path('votarCandidatoPost/<int:id_votacion>/',views.votarCandidatoPost, name='votarCandidatoPost'),
+
 
 ]
