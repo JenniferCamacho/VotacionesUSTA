@@ -15,7 +15,12 @@
   .contenido button:hover{
     background-color: #87ace4;
   }
-  .contenido a{
+  .contenido h2{
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .formulario a{
     text-decoration: none;
     color: rgb(255, 255, 255);
   }
@@ -43,7 +48,7 @@
   .votacion h3{
     margin-right: 100px;
   }
-  
+  gi
  
   #propuestaTXT{
     margin-left: 75px;
@@ -52,5 +57,5 @@
     border: #ffffff;
   }
   #propuesta{
-    margin-right: 490px;
+    margin-right: 190px;
   }

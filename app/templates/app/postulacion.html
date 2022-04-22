@@ -8,7 +8,7 @@
 {% block contenido%} 
         
         <div class="contenido">
-            <form action="{%url 'app:postulacionPost' v %}" method="POST">
+            <form action="{%url 'app:postulacionPost' v.id %}" method="POST">
                 <div class="formulario">
                     {% csrf_token %}
                     <h2>Postulación</h2>
@@ -18,14 +18,16 @@
                     <br>
                     <h3>Propuesta</h3>
                     <br>
-                    <h3><input type="text" name="propuesta"></h3>
+                        <input type="text" name="propuesta" cols="60" rows="20">  
                     <br>
                 </div> 
-                <Button type="submit" id="botonPostularse">POSTULARSE</Button>  
-            </form> 
-                <Button id="botonCancelar">
-                    <a href="{% url 'app:postularme'%}">CANCELAR</a>
-                </Button>   
+                <a>
+                    <Button type="submit" id="botonPostularse">POSTULARSE</Button>
+                </a>                  
+            </form>   
+            <Button id="botonCancelar">
+                <a href="{% url 'app:postularme'%}">CANCELAR</a>
+            </Button>
         </div> 
     </div>
     

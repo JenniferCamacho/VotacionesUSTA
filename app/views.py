@@ -65,7 +65,6 @@ def registroPost(request):
     # saca datos
         nombre=request.POST['nombres']
         apellidos=request.POST['apellidos']
-        username=request.POST['username']
         semestre=request.POST['semestre']
         email=request.POST['email']
         documento=request.POST['documento']
@@ -77,7 +76,7 @@ def registroPost(request):
         usuario=User()
         usuario.first_name=nombre
         usuario.last_name=apellidos
-        usuario.username=username
+        usuario.username=email
         usuario.email=email
         usuario.set_password(documento)
         usuario.save()
@@ -253,21 +252,27 @@ def postulacionEstudiante2(request):
     return render (request, 'app/postulacionEstudiante2.html')
 
 # PARTE DE ESTUDIANTES
+@login_required
 def detallesHistorico(request):
     return render (request, 'app/detallesHistorico.html')
 
+@login_required
 def detallesResultado(request):
     return render (request, 'app/detallesResultado.html')
- 
+
+@login_required
 def detallesResultadosFacultad (request):
     return render (request, 'app/detallesResultadosFacultad.html')
- 
+
+@login_required
 def historicoVotaciones(request):
     return render (request, 'app/historicoVotaciones.html')
- 
+
+@login_required
 def listaResultados(request):
     return render (request, 'app/listaResultados.html')
- 
+
+@login_required
 def listaVotacionesEstudiantes(request):
     # id del la facultad del estudiante
         id_usuario=request.user.id
@@ -279,9 +284,11 @@ def listaVotacionesEstudiantes(request):
         }
         return render (request, 'app/listaVotacionesEstudiantes.html',contexto)
 
+@login_required
 def votarCandidato(request):
     return render (request, 'app/votarCandidato.html')
 
+@login_required
 def votarCandidatoPost(request, id_votacion):
     votacion=Votacion.objects.get(id=id_votacion)
     facultad=Facultad.objects.get(id=votacion.facultad_id)
@@ -291,7 +298,7 @@ def votarCandidatoPost(request, id_votacion):
     }
     return render (request, 'app/votarCandidato.html', contexto)
 
-
+@login_required
 def postularme(request):
     # id del la facultad del estudiante
         id_usuario=request.user.id
@@ -303,11 +310,12 @@ def postularme(request):
         
         return render (request, 'app/postularme.html',contexto)
 
+@login_required
 def postulacion(request,id_votacion):
     votacion=Votacion.objects.get(id=id_votacion)
     facultad=Facultad.objects.get(id=votacion.facultad_id)
     contexto={
-        'v':votacion.id,
+        'v':votacion,
         'f':facultad,
     }
     return render (request, 'app/postulacion.html',contexto)
@@ -329,12 +337,15 @@ def postulacionPost(request,id_votacion):
     candidato.save()  
     return redirect ('app:postulacionExitosa')
 
+@login_required
 def menuEstudiante(request):
     return render (request, 'app/menuEstudiante.html')
- 
+
+@login_required
 def postulacionExitosa(request):
     return render (request, 'app/postulacionExitosa.html')
- 
+
+@login_required
 def votacionExitosa(request):
     return render (request, 'app/votacionExitosa.html')
  
