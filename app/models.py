@@ -127,7 +127,7 @@ class Candidato (models.Model):
     propuesta=models.CharField(max_length=45, null=True)
 
     def __str__(self):
-        return self.estudiante
+        return "%s %s" % (self.estudiante, self.propuesta)
 
     class Meta:
         app_label= 'app'

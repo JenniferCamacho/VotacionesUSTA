@@ -292,10 +292,20 @@ def votarCandidato(request):
 def votarCandidatoPost(request, id_votacion):
     votacion=Votacion.objects.get(id=id_votacion)
     facultad=Facultad.objects.get(id=votacion.facultad_id)
+    candidato=Candidato.objects.filter(Votacion_id=id_votacion)
+    usuario=[]
+    for c in candidato:
+        estudiante=Estudiante.objects.filter(id=c.estudiante_id)
+        for e in estudiante:
+            usuario.extend(User.objects.filter(id=e.user_id))
     contexto={
         'v':votacion,
         'f':facultad,
+        'candidato':candidato,
+        'usuario':usuario,
+
     }
+
     return render (request, 'app/votarCandidato.html', contexto)
 
 @login_required

@@ -21,8 +21,9 @@
             <h3>Semestre <label>{{f}}</label></h3>
 
             <h4>Lista de candidatos</h4>
-
-            <div class="candidato">
+            {%for u in usuario%}
+            {%for c in candidato%}
+            <div class="candidato"> 
                 <button>
                     <i class="fa-solid fa-user"></i>
                     <br>
@@ -31,14 +32,15 @@
                     </a>  
                 </button>
                 <ul>
-                    <li>Nombres y Apellidos</li>
-                    <li>Propuesta</li>
-                </ul>
- 
+                    <li>Nombre: {{u.first_name}},{{u.last_name}}</li>
+                    <li>Propuesta: {{c.propuesta}}</li>    
+                </ul> 
             </div>
             <br>
-            <br>  
-
+            <br>
+            {%endfor%}
+            {%endfor%}                
         </div> 
+        
     </div>
     {% endblock%}
