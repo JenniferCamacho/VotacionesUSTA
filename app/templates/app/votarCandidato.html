@@ -21,24 +21,25 @@
             <h3>Semestre <label>{{f}}</label></h3>
 
             <h4>Lista de candidatos</h4>
-            {%for u in usuario%}
             {%for c in candidato%}
-            <div class="candidato"> 
-                <button>
-                    <i class="fa-solid fa-user"></i>
-                    <br>
-                    <a href="{% url 'app:votacionExitosa'%}">
-                        <h3>Votar</h3>
-                    </a>  
-                </button>
-                <ul>
-                    <li>Nombre: {{u.first_name}},{{u.last_name}}</li>
-                    <li>Propuesta: {{c.propuesta}}</li>    
-                </ul> 
-            </div>
+            <form action="{% url 'app:votacionExitosaPost' c.id%}">
+                <div class="candidato"> 
+                    {% csrf_token %}
+                    <button>
+                        <i class="fa-solid fa-user"></i>
+                        <br>
+                        <a href="">
+                            <h3>Votar</h3>
+                        </a>  
+                    </button>
+                    <ul>
+                        <li>Nombre: {{c.estudiante.user.first_name}},{{c.estudiante.user.last_name}}</li>
+                        <li>Propuesta: {{c.propuesta}}</li>    
+                    </ul> 
+                </div>
+            </form>
             <br>
             <br>
-            {%endfor%}
             {%endfor%}                
         </div> 
         

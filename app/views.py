@@ -1,5 +1,8 @@
+from ast import Break
+from datetime import date, datetime,time
 from msilib.schema import RadioButton
 from multiprocessing import context
+from tkinter import E
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
@@ -299,14 +302,28 @@ def votarCandidatoPost(request, id_votacion):
         for e in estudiante:
             usuario.extend(User.objects.filter(id=e.user_id))
     contexto={
-        'v':votacion,
+        'v':votacion,   
         'f':facultad,
         'candidato':candidato,
         'usuario':usuario,
-
     }
 
     return render (request, 'app/votarCandidato.html', contexto)
+
+@login_required
+def votacionExitosa(request):
+    return render (request, 'app/votacionExitosa.html')
+
+def votacionExitosaPost(request, id_candidato):
+    id_usuario=request.user.id
+    estudiante=Estudiante.objects.get(user_id=id_usuario)
+    voto=Voto()
+    voto.candidato_id=id_candidato
+    voto.votante_id=estudiante.id
+    voto.FechaHora= datetime.today()
+    voto.save()
+    return redirect ('app:postulacionExitosa')
+ 
 
 @login_required
 def postularme(request):
@@ -332,20 +349,30 @@ def postulacion(request,id_votacion):
 
 @login_required
 def postulacionPost(request,id_votacion):
-    
-    id_usuario=request.user.id
-    estudiante=Estudiante.objects.get(user_id=id_usuario)
-    p=request.POST['propuesta']
+    try:
+        id_usuario=request.user.id
+        estudiante=Estudiante.objects.get(user_id=id_usuario)
+        candidato=Candidato.objects.get(Q(Votacion_id=id_votacion) & Q(estudiante_id=estudiante.id))
+        return redirect ('app:YaEstaPostulado')
 
-    candidato=Candidato()
-    candidato.propuesta=p
-    candidato.semestre=estudiante.semestreActual
-    candidato.Votacion_id=id_votacion
-    candidato.estudiante_id=estudiante.id
-    print(id_usuario)
+    except:
+        id_usuario=request.user.id
+        estudiante=Estudiante.objects.get(user_id=id_usuario)
+        candidato=Candidato.objects.filter(Q(Votacion_id=id_votacion) & Q(estudiante_id=estudiante.id))
+        id_usuario=request.user.id
+        p=request.POST['propuesta']
+        candidato=Candidato()
+        candidato.propuesta=p
+        candidato.semestre=estudiante.semestreActual
+        candidato.Votacion_id=id_votacion
+        candidato.estudiante_id=estudiante.id
+        candidato.save()
+        veri=True
+        return redirect ('app:postulacionExitosa')
 
-    candidato.save()  
-    return redirect ('app:postulacionExitosa')
+@login_required
+def YaEstaPostulado(request):
+    return render (request,'app/YaEstaPostulado.html')
 
 @login_required
 def menuEstudiante(request):
@@ -355,10 +382,6 @@ def menuEstudiante(request):
 def postulacionExitosa(request):
     return render (request, 'app/postulacionExitosa.html')
 
-@login_required
-def votacionExitosa(request):
-    return render (request, 'app/votacionExitosa.html')
- 
 
 
 

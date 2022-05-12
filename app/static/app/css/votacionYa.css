@@ -1,12 +1,12 @@
 /* CONTENIDO */
 
-.contenido button{
+.contenidoo button{
     border: #ffffff;
     background-color: #ffffff;
     
 }
-.contenido button i{
-    color: #318A6A;
+.contenidoo button i{
+    color: yellow;
     font-size: 200px;
     position: absolute;
     width: 199px;
@@ -15,22 +15,21 @@
     top: 315px;
    
 }
-.contenido h1{
+.contenidoo h1{
     font-size: 30px;
-    color: #032B11;
+    color: yellow;
     position: absolute;
     width: 407px;
     height: 35px;
     left: 770px;
     top: 320px;   
 }
-.contenido h2{
+.contenidoo h2{
   font-size: 30px;
-  color: #032B11;
+  color: yellow;
   position: absolute;
   width: 407px;
   height: 35px;
   left: 770px;
   top: 400px;
 }
-

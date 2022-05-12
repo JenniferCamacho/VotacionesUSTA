@@ -36,8 +36,9 @@ urlpatterns = [
     path('postulacion/<int:id_votacion>/',views.postulacion, name='postulacion'),
     path('postulacionPost/<int:id_votacion>/',views.postulacionPost, name='postulacionPost'),
     path('votacionExitosa/',views.votacionExitosa, name='votacionExitosa'),
+    path('votacionExitosaPost/<int:id_candidato>/',views.votacionExitosaPost, name='votacionExitosaPost'),
     path('votarCandidato/',views.votarCandidato, name='votarCandidato'),
     path('votarCandidatoPost/<int:id_votacion>/',views.votarCandidatoPost, name='votarCandidatoPost'),
-
+    path('YaEstaPostulado/',views.YaEstaPostulado, name='YaEstaPostulado'),
 
 ]
