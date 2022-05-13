@@ -383,6 +383,4 @@ def postulacionExitosa(request):
     return render (request, 'app/postulacionExitosa.html')
 
 
-
-
     
