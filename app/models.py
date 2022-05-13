@@ -145,6 +145,12 @@ class Voto (models.Model):
         null=False,
         on_delete=models.PROTECT
     )
+    votacion=models.ForeignKey(
+        Votacion,
+        related_name='votos',
+        null=False,
+        on_delete=models.PROTECT
+    )
     FechaHora=models.DateTimeField(null=True)
 
     def __str__(self):

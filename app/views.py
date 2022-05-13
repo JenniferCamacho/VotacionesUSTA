@@ -320,8 +320,10 @@ def votacionExitosaPost(request, id_candidato):
     voto=Voto()
     voto.candidato_id=id_candidato
     voto.votante_id=estudiante.id
-    voto.FechaHora= datetime.today()
-    voto.save()
+    voto.FechaHora=datetime.today()
+    voto.votacion_id=1
+    Nombre=request.POST['nombre']
+    # voto.save()
     return redirect ('app:postulacionExitosa')
  
 
